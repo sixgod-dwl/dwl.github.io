@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html >
  <head>
-  <title> 7月 日的练习题 </title>
+  <title>模仿音悦台页面 </title>
    <meta charset="utf-8" />
   
 <link rel="stylesheet" type="text/css" href="css/yinyuetai.css">
 <script src="html5shiv.min.js"></script>
  </head>
+<style>
+.head {
+	min-width: 1300px;
+}
+.headerC {
+	width: 1300px;
+	margin: 0 auto;
+}
+</style>
+<script type="text/javascript">
+		var arrBImg=["img/pic.jpg","img/pic2.jpg","img/pic3.jpg","img/pic4.jpg"],
+		arrBH2=["五月天1st抒情主打《后来的我们》","","",""],
+		arrBP=["五月天1st抒情主打《后来的我们》MV上线！剧情衔接《突然好想你》的故事，王大陸、林辰唏再度携手出演。初恋那年，我和你相遇，却遗憾未果。后来，就没有“后来的我们”了，只有“过去的我们”，我细心收藏着缤纷的昨日，而亲爱的，你只管快乐，不用感觉到我的遗憾。","","",""];
+	window.onload=function(){
+		//获取元素
+		var bannerImgs=document.querySelectorAll(".show img")[0];
+		var preBImg=document.querySelectorAll(".show .picleft")[0];
+		var nextBImg=document.querySelectorAll(".show .picright")[0];
+		var bannerH2=document.querySelectorAll(".show h2")[0];
+		var bannerP=document.querySelectorAll(".show P")[0];
+		var n=0;
+		console.log(bannerImgs,preBImg,nextBImg);
+		console.log(1);
+		preBImg.onclick=function(){
+			n--;
+			if(n<0){
+				n=arrBImg.length-1;
+			}
+			bannerImgs.src=arrBImg[n%arrBImg.length];
+			bannerH2.innerHTML=arrBH2[n%arrBH2.length];
+			bannerP.innerHTML=arrBP[n%arrBP.length];
+		};
+		nextBImg.onclick=function(){
+			n++;
+			bannerImgs.src=arrBImg[n%arrBImg.length];
+			bannerH2.innerHTML=arrBH2[n%arrBH2.length];
+			bannerP.innerHTML=arrBP[n%arrBP.length];
+			
+		};
+	};
+</script>
  <body>
  <header id="header" class="head  clearFix">
     <div class="headerC">
